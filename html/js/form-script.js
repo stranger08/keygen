@@ -7,6 +7,14 @@ $( document ).ready( function() {
 	$( document ).find(".rem-licence").toggle();
 	
 	function synch_options() {
+		/*
+			update parameters
+		*/
+		$.each($(".form-line .inner-line"), function(i, line){
+		
+			var name = $( this ).find("select :selected").attr("value");
+			$( this ).find("input").attr("name", name);
+		});
 	
 		$('.form-line option').show();
 		
@@ -26,6 +34,8 @@ $( document ).ready( function() {
 		
 		var lines_container = $( $( this ).parent().parent() );
 		var new_line = $( this ).parent().clone(true);
+		
+		$(new_line).find("input").val("");
 		
 		if ( lines_container.children().size() == 8 ){
 			new_line.find(".add-licence").hide();
@@ -86,5 +96,15 @@ $( document ).ready( function() {
 		$( this ).parent().find("input").attr("name", category );
 		
 		synch_options();
+	});
+	
+	$(".inner-line input").on("change", function(){
+		if ( $.isNumeric($(this).val()) && Math.floor( $(this).val()) == $(this).val()  ){
+			//alert("Good");
+		}
+		else{
+			//alert("Bad");
+			$( this ).val("");
+		}
 	});
 });
