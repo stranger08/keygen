@@ -16,8 +16,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/html/css/styles.css">
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/html/js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/html/js/form-script.js"></script>
-
+	<?php if ( $_GET['r'] == 'site/generate') :?>
+		<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/html/js/form-script.js"></script>
+		<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/html/js/ie-form-script.js"></script>
+	<?php endif; ?>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -47,7 +49,7 @@
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+	<?php endif; ?>
 
 	<?php echo $content; ?>
 

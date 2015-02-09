@@ -75,6 +75,7 @@ class SiteController extends Controller
 	 *	Generation process handler
 	 */
 	public function actionGeneration(){
+		echo "Params:";
 		foreach($_POST as $param){
 			echo $param;
 		}

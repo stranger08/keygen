@@ -37,7 +37,7 @@ $this->pageTitle=Yii::app()->name . ' - Generator';
 	</div>
 
 
-	<form id="licence-form" method="GET">
+	<form id="licence-form" action="/index.php?r=site/generation" method="post">
 			<input type="submit" value="Generate"> </input>
 	</form>
 </div>
