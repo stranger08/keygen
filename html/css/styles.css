@@ -20,6 +20,7 @@
 }
 
 #form-wrapper select{
+	width: 200px;
 	display: table-cell;
 	vertical-align: middle;
 	float: left;
@@ -51,6 +52,9 @@
 	padding: 5px;
 	display: table-cell;
 	vertical-align: middle;
+	line-height: 17px;
+	text-align: center;
+	width: 40px
 }
 
 
@@ -58,25 +62,22 @@
 	firefox minor fixes
 */
 @-moz-document url-prefix() {
-	#form-wrapper .rem-licence{margin-bottom: 16px!important}
-	#form-wrapper .form-line input{line-height:26px;}
+	#form-wrapper .rem-licence{margin: 4px 0 8px 0!important; padding: 8px}
+	#form-wrapper .form-line input{line-height:28px;}
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 	#form-wrapper .rem-licence{
-		margin-bottom: 16px!important
+		/*margin-bottom: 16px!important*/
 	}
 	#form-wrapper .form-line input{
 		padding: 6px 0 6px 0;
 	}
 }
 					
-/*#form-wrapper .form-line input, #form-wrapper select {
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 2px solid rgb(238, 238, 238);
-}*/
+#form-wrapper .form-line input, #form-wrapper select {
+	border: 2px solid black;
+}
 
 #form-wrapper .form-line  {
 	float: left;
@@ -85,25 +86,47 @@
 
 #form-wrapper .form-line .inner-line {
 	display: table;
-	width: 85%;
-	padding: 10px 0 10px 0
+	width: 80%;
+	padding: 5px 0 5px 0
 }
 
 #form-wrapper .rem-licence  {
-	background-image: url('img/minus.jpg');
+	background-image: url('img/del-licence.png');
+	background-size: 70%;
+	background-position: center center;
+	padding: 6px;
 	opacity: 0.2;
 	margin: 0
 }
 
 #form-wrapper .rem-licence:hover {
-	opacity: 1
+	opacity: 1;
+	cursor: pointer
+}
+
+#form-wrapper .add-licence:hover {
+	cursor: pointer
 }
 
 #form-wrapper .add-licence {
-	background-image: url('img/plus.jpg');
+	/*background-image: url('img/plus.jpg');*/
 	margin-left: 0;
+	padding: 0;
+	width: 175px;
+	border: 2px solid black;
+	font-size: 12px;
+	line-height: 150%
 }
 
 #form-wrapper .form-line {
 	display: block
+}
+
+#form-wrapper form input[type="submit"]{
+	background:none;
+	width: 80px;
+	border: 2px solid black;
+	float: left;
+	padding:10px;
+	margin-top: 50px
 }
