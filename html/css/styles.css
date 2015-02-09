@@ -1,0 +1,109 @@
+* {
+	margin:0;
+	padding:0
+}
+
+#page-wrapper {
+	width: 1000px;
+	text-align: center;
+	margin: 0 auto 0 auto;
+	display: block;
+	height: 100%vp
+}
+
+#form-wrapper {
+	float: left
+}
+
+#form-wrapper form {
+	float: left
+}
+
+#form-wrapper select{
+	display: table-cell;
+	vertical-align: middle;
+	float: left;
+	padding: 5px;
+	margin: 0 5px 0 0
+}
+
+#form-wrapper select option {
+	padding: 5px 0 5px 0
+}
+
+#form-wrapper select:selected {
+	visibility: hidden
+}
+
+#form-wrapper .add-rem-button {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	float: left;
+	padding: 5px;
+	margin: 5px
+}
+
+#form-wrapper .form-line input {
+	float: left;
+	padding: 5px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+/*
+	firefox minor fixes
+*/
+@-moz-document url-prefix() {
+	#form-wrapper .rem-licence{margin-bottom: 16px!important}
+	#form-wrapper .form-line input{line-height:26px;}
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	#form-wrapper .rem-licence{
+		margin-bottom: 16px!important
+	}
+	#form-wrapper .form-line input{
+		padding: 6px 0 6px 0;
+	}
+}
+					
+/*#form-wrapper .form-line input, #form-wrapper select {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 2px solid rgb(238, 238, 238);
+}*/
+
+#form-wrapper .form-line  {
+	float: left;
+	width: 100%;
+}
+
+#form-wrapper .form-line .inner-line {
+	display: table;
+	width: 85%;
+	padding: 10px 0 10px 0
+}
+
+#form-wrapper .rem-licence  {
+	background-image: url('img/minus.jpg');
+	opacity: 0.2;
+	margin: 0
+}
+
+#form-wrapper .rem-licence:hover {
+	opacity: 1
+}
+
+#form-wrapper .add-licence {
+	background-image: url('img/plus.jpg');
+	margin-left: 0;
+}
+
+#form-wrapper .form-line {
+	display: block
+}
