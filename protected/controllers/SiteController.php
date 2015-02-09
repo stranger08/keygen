@@ -71,7 +71,16 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
-
+	
+	/**
+	 * Generator
+	 */
+	public function actionGenerate()
+	{
+		$licence_types=new CActiveDataProvider('LicenceType');
+		
+		$this->render('generate',array('types'=>$licence_types));
+	}
 	/**
 	 * Displays the login page
 	 */
