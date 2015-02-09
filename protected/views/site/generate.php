@@ -1,5 +1,6 @@
 <?php
 /* @var $types All available licence types */
+/* @var $this SiteController */
 $this->pageTitle=Yii::app()->name . ' - Generator';
 ?>
 <h1>Generate Licence Keys</h1>
@@ -36,7 +37,7 @@ $this->pageTitle=Yii::app()->name . ' - Generator';
 	</div>
 
 
-	<form id="licence-form" method="GET" action="">
+	<form id="licence-form" method="GET">
 			<input type="submit" value="Generate"> </input>
 	</form>
 </div>

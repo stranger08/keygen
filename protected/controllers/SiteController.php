@@ -71,7 +71,14 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
-	
+	/**
+	 *	Generation process handler
+	 */
+	public function actionGeneration(){
+		foreach($_POST as $param){
+			echo $param;
+		}
+	}
 	/**
 	 * Generator
 	 */
