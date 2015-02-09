@@ -15,7 +15,7 @@ class LicenceKey extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'licence_keys';
+		return 'l_keys';
 	}
 
 	/**
@@ -26,12 +26,12 @@ class LicenceKey extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('key_value, type', 'required'),
+			array('l_key_value, type', 'required'),
 			array('type', 'numerical', 'integerOnly'=>true),
-			array('key_value', 'length', 'max'=>14),
+			array('l_key_value', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, key_value, type', 'safe', 'on'=>'search'),
+			array('id, l_key_value, type', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,7 +43,7 @@ class LicenceKey extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'licence_type' => array(self::HAS_ONE, 'LicenceType', 'id')
+			'lic_type' => array(self::BELONGS_TO, 'LicenceType', 'type')
 		);
 	}
 
@@ -54,7 +54,7 @@ class LicenceKey extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'key_value' => 'Key Value',
+			'l_key_value' => 'Key Value',
 			'type' => 'Type',
 		);
 	}
@@ -78,7 +78,7 @@ class LicenceKey extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('key_value',$this->key_value,true);
+		$criteria->compare('l_key_value',$this->key_value,true);
 		$criteria->compare('type',$this->type);
 
 		return new CActiveDataProvider($this, array(
@@ -95,5 +95,59 @@ class LicenceKey extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	/**
+	  * Returns random character from a ranges A to Z and 0 to 9
+	  *
+	  */
+	private static function rand_char(){
+		$char_array = range('0', '9') + range('A', 'Z') ;
+		return $char_array[ array_rand($char_array) ]  ;
+	}
+	/**
+	  *	Generates key of structure XXXX-XXXX-XXXX with  random characters from a method above
+	  *
+	  */
+	private static function generate_licence_key(){
+			return LicenceKey::rand_char() . LicenceKey::rand_char() . LicenceKey::rand_char() . LicenceKey::rand_char() 
+						. "-" . LicenceKey::rand_char() . LicenceKey::rand_char() . LicenceKey::rand_char() . LicenceKey::rand_char()
+							. "-" . LicenceKey::rand_char() . LicenceKey::rand_char() . LicenceKey::rand_char() . LicenceKey::rand_char();
+	}
+	/**
+	  * "unique" forbids to return the key which already exists in database. In this case, method calls itself to create new key.
+	  *
+	  * FIX ME - There are limited combinations of different keys using this algorithm. After  34^16 generated keys this method will go infinitive loop.
+	  */	//																											- -  -All possible variations	(3 189 059 870 763 703 892 770 816)
+	private static function generate_uniq_licence_key(){
+		
+		$key = LicenceKey::generate_licence_key();
+		
+		if ( LicenceKey::model()->findByAttributes(array("l_key_value" => $key) )  == NULL){
+			return $key;
+		}
+		else {
+			return LicenceKey::generate_uniq_licence_key();
+		}
+	}
+	
+	public static function generate_keys( $params ){
+		
+		$keys = array();
+		
+		foreach ( $params as $l_type => $amount){
+			
+			$_type =  LicenceType::model()->findByAttributes(array("code" => $l_type) )->id;
+			$_codes_generated = 0;
+			
+			while( $_codes_generated++ < $amount ){
+				$model = new LicenceKey;
+				$model->l_key_value = LicenceKey::generate_uniq_licence_key();
+				$model->type = $_type;
+				$model->save();
+				array_push($keys, $model);
+			}
+		}
+		
+		return $keys;
 	}
 }

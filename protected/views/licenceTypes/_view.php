@@ -3,7 +3,7 @@
 /* @var $data LicenceType */
 ?>
 
-<tr><td><?php echo CHtml::encode($data->code); ?></td><td><?php echo CHtml::encode($data->name); ?></td></td><td><?php echo CHtml::encode($data->comment); ?></td></tr>
+<tr><td><?php echo CHtml::encode($data->code); ?></td><td><?php echo CHtml::encode($data->name); ?></td><td><?php echo CHtml::encode($data->limit); ?></td><td><?php echo CHtml::encode($data->comment); ?></td></tr>
 
 <!--<div class="view">
 

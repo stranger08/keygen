@@ -2,7 +2,7 @@
 /* @var $this LicenceKeyController */
 /* @var $model LicenceKey */
 
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	'Licence Keys'=>array('index'),
 	'Manage',
 );
@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List LicenceKey', 'url'=>array('index')),
 	array('label'=>'Create LicenceKey', 'url'=>array('create')),
-);
+);*/
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){

@@ -12,7 +12,8 @@
 }
 
 #form-wrapper {
-	float: left
+	float: left;
+	width: 500px
 }
 
 #form-wrapper form {
@@ -123,7 +124,8 @@
 }
 
 #form-wrapper .form-line {
-	display: block
+	display: block;
+	margin-bottom: 40px
 }
 
 #form-wrapper form input[type="submit"]{
@@ -132,15 +134,20 @@
 	border: 2px solid black;
 	float: left;
 	padding:10px;
-	margin-top: 50px
 }
 
-#licence-types-table {
+#form-wrapper span#validation-errors {
+	color: red;
+	line-height: 300%;
+	margin-left: 10px
+}
+
+#licence-types-table,  #generated-keys-table {
 	border: 2px solid black;
 	color: black
 }
 
-#licence-types-table th {
+#licence-types-table th,  #generated-keys-table th{
 	background-color: white;
 	border-bottom: 1px solid grey
 }

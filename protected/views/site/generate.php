@@ -4,7 +4,6 @@
 $this->pageTitle=Yii::app()->name . ' - Generator';
 ?>
 <h1>Generate Licence Keys</h1>
-<p>Choose the type of the licence and write the number of amount needed. You can select several licence types by clicking "Add another licence type" button. As soon as you are clear about your choice, press "Generate".</p>
 
 <div id="form-wrapper">
 	<div class="form-line">
@@ -14,25 +13,16 @@ $this->pageTitle=Yii::app()->name . ' - Generator';
 					'dataProvider'=>$types,
 					'itemView'=>'_option',
 				)); ?>
-				<!--<option value="LB10">Light Bronze Edition</option>
-				<option value="LS50">Light Silver Edition</option>
-				<option value="LG100">Light Gold Edition</option>
-				<option value="SB10">Standard Bronze Edition</option>
-				<option value="SS50">Standard Silver Edition </option>
-				<option value="SG100">Standard Gold Edition</option>
-				<option value="PB10">Professional Bronze Edition</option>
-				<option value="PS50">Professional Silver Edition</option>
-				<option value="PG100">Professional Gold Edition</option>-->
 			</select>
 			<input form="licence-form" type="text" name="LB10"> </input>
 		
 			<div class="rem-licence add-rem-button">
 				&nbsp;
 			</div>
-			
 			<div class="add-licence add-rem-button">
 					Add another licence type
 			</div>
+			
 		</div>
 	</div>
 
@@ -40,4 +30,8 @@ $this->pageTitle=Yii::app()->name . ' - Generator';
 	<form id="licence-form" action="/index.php?r=site/generation" method="post">
 			<input type="submit" value="Generate"> </input>
 	</form>
+	<span id="validation-errors">Validation error messages goes here.</span>
 </div>
+<p>
+Choose the type of the licence and write the number of amount needed. You can select several licence types by clicking "Add another licence type" button. As soon as you are clear about your choice, press "Generate".
+</p>

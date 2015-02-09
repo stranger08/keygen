@@ -6,10 +6,10 @@
 	'Licence Keys',
 );*/
 
-$this->menu=array(
+/*$this->menu=array(
 	array('label'=>'Create LicenceKey', 'url'=>array('create')),
 	array('label'=>'Manage LicenceKey', 'url'=>array('admin')),
-);
+);*/
 ?>
 
 <h1>Licence Keys</h1>

@@ -16,7 +16,7 @@ class LicenceType extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'licence_types';
+		return 'l_types';
 	}
 
 	/**

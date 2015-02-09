@@ -1,5 +1,5 @@
 
-function msieversion() {
+/*function msieversion() {
 
         var ua = window.navigator.userAgent;
         var msie = ua.indexOf("MSIE ");
@@ -18,15 +18,14 @@ $( document ).ready( function() {
 			
 			$("#form-wrapper form").submit( function(){
 				
-				alert("IE submit");
+				//alert("IE submit");
 				
-				var inputs = $("#form-wrapper").find("input[type='text']");
 				
-				alert(inputs.size());
+				//alert(inputs.size());
 				
-				$( this ).append(inputs);
+				
 				
 				return true;
 			});
 		}
-});
+});*/

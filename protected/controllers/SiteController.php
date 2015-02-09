@@ -75,10 +75,26 @@ class SiteController extends Controller
 	 *	Generation process handler
 	 */
 	public function actionGeneration(){
-		echo "Params:";
-		foreach($_POST as $param){
-			echo $param;
+		
+		$params = array();
+		$all_licence_types = LicenceType::model()->findAll();
+		//
+		//
+		foreach( $all_licence_types as $licence_type ){
+			// extract parameters from $_POST array
+			if ( isset( $_POST[  $licence_type->code ] )  && ($_POST[ $licence_type->code] >0) ){
+				$params[ $licence_type->code ] = $_POST[ $licence_type->code ];
+			}
 		}
+		//die(var_dump($params));//DEBUGMODE
+		
+		$keys = LicenceKey::generate_keys( $params );
+		
+		$this->render('generated',array(
+			'keys'=>$keys, 'display_params' => $params,
+		));
+		
+		//var_dump($keys);
 	}
 	/**
 	 * Generator
