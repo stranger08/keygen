@@ -12,7 +12,7 @@
 
 <table id="licence-types-table">
 <thead>
-	<tr><th>Code</th><th>Name</th><th>Limit</th></th><th>Comment</th></tr>
+	<tr><th>Vendor's Part Number</th><th>Description</th></th><th>Comments</th></tr>
 </thead>
 <tbody>
 <?php $this->widget('zii.widgets.CListView', array(

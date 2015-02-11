@@ -27,7 +27,7 @@ $this->pageTitle=Yii::app()->name . ' - Generator';
 	</div>
 
 
-	<form id="licence-form" action="/index.php?r=site/generation" method="post">
+	<form id="licence-form" action="<?php echo Yii::app()->getBaseUrl(true) . '?r=site/generation';?>" method="post">
 			<input type="submit" value="Generate"> </input>
 	</form>
 	<span id="validation-errors">Validation error messages goes here.</span>

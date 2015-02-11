@@ -3,8 +3,8 @@
 /* @var $data LicenceType */
 ?>
 
-<tr><td><?php echo CHtml::encode($data->code); ?></td><td><?php echo CHtml::encode($data->name); ?></td><td><?php echo CHtml::encode($data->limit); ?></td><td><?php echo CHtml::encode($data->comment); ?></td></tr>
-
+<tr><td><?php echo CHtml::encode($data->vendor_part_number); ?></td><td><?php echo CHtml::encode($data->description); ?></td><td><?php echo CHtml::encode($data->comment); ?></td></tr>
+<!-- barcode is not shown <td><?php /*echo CHtml::encode($data->barcode);*/ ?></td> -->
 <!--<div class="view">
 
 	<b><?php /*echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>

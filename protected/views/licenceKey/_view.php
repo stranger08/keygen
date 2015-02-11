@@ -3,7 +3,7 @@
 /* @var $data LicenceKey */
 ?>
 
-<tr><td><?php echo CHtml::encode($data->l_key_value); ?></td><td><?php echo CHtml::encode($data->lic_type->name); ?></td></tr>
+<tr><td><?php echo CHtml::encode($data->l_key_value); ?></td><td><?php echo CHtml::encode($data->lic_type->comment); ?></td></tr>
 
 <!--<div class="view">
 

@@ -256,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `l_types` (
 INSERT INTO `l_types` (`id`, `code`, `name`, `limit`, `comment`) VALUES
 (1, 'LB10', 'Light Bronze Edition', 10, 'Limited to 10 users'),
 (2, 'LS50', 'Light Silver Edition', 50, 'Limited to 50 users'),
-(3, 'LP10', 'Light Gold Edition', 100, 'Limited to 100 users'),
+(3, 'LP100', 'Light Gold Edition', 100, 'Limited to 100 users'),
 (4, 'SB10', 'Standard Bronze Edition', 10, 'Limited to 10 users'),
 (5, 'SS50', 'Standard Silver Edition', 50, 'Limited to 50 users'),
 (6, 'SG100', 'Standard Gold Edition', 100, 'Limited to 100 users'),

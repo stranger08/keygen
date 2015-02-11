@@ -82,7 +82,7 @@ class SiteController extends Controller
 		//
 		foreach( $all_licence_types as $licence_type ){
 			// extract parameters from $_POST array
-			if ( isset( $_POST[  $licence_type->code ] )  && ($_POST[ $licence_type->code] >0) ){
+			if ( isset( $_POST[  $licence_type->code ] )  && ($_POST[ $licence_type->code] > 0) ){
 				$params[ $licence_type->code ] = $_POST[ $licence_type->code ];
 			}
 		}

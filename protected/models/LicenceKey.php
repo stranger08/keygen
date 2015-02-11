@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "licence_keys".
  *
@@ -129,7 +128,14 @@ class LicenceKey extends CActiveRecord
 			return LicenceKey::generate_uniq_licence_key();
 		}
 	}
-	
+	/**
+	  *	Generates licence keys by given parameters array;
+	  *
+	  *	 Parameters array structure:
+	  *		key => licence code
+	 *         value => amount of licence numbers to generate
+	  *
+	  */
 	public static function generate_keys( $params ){
 		
 		$keys = array();
@@ -147,7 +153,6 @@ class LicenceKey extends CActiveRecord
 				array_push($keys, $model);
 			}
 		}
-		
 		return $keys;
 	}
 }

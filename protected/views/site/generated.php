@@ -37,7 +37,7 @@
 		
 		foreach($display_params as $_type => $_count){
 			$_licence = LicenceType::model()->findByAttributes(array('code' => $_type));
-			$raw_html_strings[ $_type ] = "<th>" . $_licence->name  ."</th>";
+			$raw_html_strings[ $_type ] = "<th>" . $_licence->comment  ."</th>";
 		}
 		
 		foreach( $keys as $_key ){

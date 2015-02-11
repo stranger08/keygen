@@ -16,7 +16,7 @@
 
 <table id="licence-types-table">
 <thead>
-	<tr><th>Key</th><th>Type</th></th></tr>
+	<tr><th>Key</th><th>Licence Type</th></th></tr>
 </thead>
 <tbody>
 <?php $this->widget('zii.widgets.CListView', array(
