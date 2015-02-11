@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/keygen.local.iml" filepath="$PROJECT_DIR$/.idea/keygen.local.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/keygen.iml" filepath="$PROJECT_DIR$/.idea/keygen.iml" />
     </modules>
   </component>
 </project>
