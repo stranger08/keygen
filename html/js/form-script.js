@@ -53,6 +53,14 @@ $( document ).ready( function() {
 	
 	var l_types_count = $("#form-wrapper select option").size();// All different licence types ( select drop down content)  
 	var pass_IE_params = msieversion();// true if IE( any version), false otherwise
+
+	if ( true == pass_IE_params){
+
+		$.getScript("html5shiv-printshiv.js", function(){
+		});
+		$.getScript("html5shiv.js", function(){
+		})
+	}
 	
 	$( document ).find(".rem-licence").toggle();// hide delete button for only licence selector
 	
@@ -77,6 +85,10 @@ $( document ).ready( function() {
 		});
 	
 		$('.form-line option').show();
+
+		if (pass_IE_params) {
+			$('.form-line span option').unwrap();
+		}
 		
 		selected = $(".form-line select").find("option:selected");
 		not_selected = $(".form-line select").find("option:not(:selected)");
@@ -85,6 +97,9 @@ $( document ).ready( function() {
 			$.each(selected, function(j, s){
 				if ($(not_s).attr("value") == $(s).attr("value")){
 					$( not_s ).hide();
+					if (pass_IE_params){
+						$( not_s).wrap("<span>").parent().hide();
+					}
 				}
 			});
 		});
